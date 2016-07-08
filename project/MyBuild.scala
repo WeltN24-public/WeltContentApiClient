@@ -8,11 +8,12 @@ import org.scalastyle.sbt.ScalastylePlugin._
 object MyBuild extends Build {
 
   scalaVersion := "2.11.8"
+  val playVersion = "2.5.4"
 
   val frontendCompilationSettings = Seq(
     organization := "de.welt",
     scalaVersion := "2.11.8",
-    version := "0.0.1",
+    version := "0.1.0-SNAPSHOT",
 
     licenses +=("MIT", url("http://opensource.org/licenses/MIT")),
     javacOptions ++= Seq("-source", "1.8", "-target", "1.8"),
@@ -31,9 +32,10 @@ object MyBuild extends Build {
 
   val coreDependencySettings = Seq(
     libraryDependencies ++= Seq(
-      "com.typesafe.play" %% "play" % "2.4.0" % Provided,
+      "com.typesafe.play" %% "play" % playVersion % Provided,
       "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
-      "org.mockito" % "mockito-core" % "1.10.19" % Test
+      "org.mockito" % "mockito-core" % "1.10.19" % Test,
+      "com.typesafe.play" %% "play-cache" % playVersion % Provided
     )
   )
   val clientDependencySettings = Seq(
@@ -46,8 +48,8 @@ object MyBuild extends Build {
 
       "com.typesafe" % "config" % "1.3.0" % Provided,
 
-      "com.typesafe.play" %% "play-ws" % "2.4.0" % Provided,
-      "com.typesafe.play" %% "play-cache" % "2.4.0" % Provided,
+      "com.typesafe.play" %% "play-ws" % playVersion % Provided,
+      "com.typesafe.play" %% "play-cache" % playVersion % Provided,
 
       "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
       "org.mockito" % "mockito-core" % "1.10.19" % Test

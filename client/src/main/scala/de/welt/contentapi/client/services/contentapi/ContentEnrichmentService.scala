@@ -2,6 +2,7 @@ package de.welt.contentapi.client.services.contentapi
 
 import javax.inject.{Inject, Singleton}
 
+import de.welt.contentapi.core.models.SdpSectionData
 import de.welt.contentapi.core.models.api.ApiContent
 import de.welt.contentapi.core.traits.Loggable
 

@@ -1,6 +1,7 @@
 package de.welt.contentapi.client
 
-import de.welt.contentapi.client.services.configuration.{ContentClientConfig, ContentClientConfigImpl, SectionConfigurationService, SectionConfigurationServiceImpl}
+import de.welt.contentapi.client.services.configuration.{SectionConfigurationService, SectionConfigurationServiceImpl}
+import de.welt.contentapi.client.services.configuration.{ContentClientConfig, ContentClientConfigImpl}
 import de.welt.contentapi.client.services.contentapi._
 import de.welt.contentapi.client.services.s3.{S3, S3Impl}
 import play.api.inject.Module
